@@ -1,1 +1,1 @@
-Just a game to train your memory
+Just a game to train your memory.
