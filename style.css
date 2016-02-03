@@ -1,39 +1,97 @@
 body {
 	margin: 0;
-	text-align: center;
-	font: 12px 'Arial';
+	background: #fff;
+	font-family: "Arial";
 	color: #333;
 }
 
-.page {
-	width: 340px;
-	padding: 10px 0 25px 0;
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+	min-width: 70%;
 	margin: auto;
 }
 
+h1 {
+	margin: 10px 20px 30px 0;
+	padding: 0;
+	font-size: 20px;
+}
+
+.container {
+	width: 100%;
+	margin: auto;
+}
+ 
+@media screen and (min-width: 400px) {
+	.container {
+		width: 400px;
+	}
+}
+
 .header {
-	margin: 0 0 20px 0;
+	margin: 10px auto 20px auto;
 	padding-bottom: 7px;
 	border-bottom: 2px solid #000;
-	font: 900 32px 'Sarpanch', sans-serif;
 }
 
 .footer {
-	padding-top: 7px;
+	margin: 20px 0;
+	padding: 7px 3px 0 0;
 	border-top: 2px solid #000;
 	text-align: right;
+	font-size: 12px;
 	font-style: italic;
 }
 
-.icon {
-	width: 50px;
-	height: 50px;
+.level {
+	height: 25px;
+	margin: 20px;
+	padding: 8px 0 0 45px;
+	background: url("assets/checkbox.png") no-repeat;
+	font-size: 18px;
+	letter-spacing: .5px;
+	cursor: default;
 }
 
-.floater {
-	float: left;
+.level.checked {
+	background-position: 0px -33px;
+	color: #00BB00;
 }
 
-.clearer {
-	clear: left;
+.button-group {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 2px solid #000;
+}
+
+.button {
+	display: block;
+	width: 60px;
+	margin: auto;
+	padding: 10px 20px 10px 20px;
+	text-align: center;
+	font-size: 14px;
+	color: #FFF;
+	cursor: pointer;
+}
+
+.button:hover {
+	opacity: .8;
+}
+
+.primary {
+	background: #F92922;
+}
+
+.secondary {
+	background: #00BB00;
+}
+
+.hidden {
+	display: none;
 }
