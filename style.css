@@ -76,6 +76,7 @@ a:hover {
 	margin: 20px;
 	padding: 8px 0 0 45px;
 	background: url("assets/checkbox.png") no-repeat;
+	text-transform: capitalize;
 	font-size: 18px;
 	letter-spacing: .5px;
 	cursor: pointer;
@@ -167,7 +168,6 @@ a:hover {
 
 .hidden {
 	display: none;
-	opacity: 0;
 }
 
 .clearer {

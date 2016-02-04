@@ -1,0 +1,442 @@
+//haz una seleccion aleatoria, sin repetir, de 32 numeros entre el 1 y el max
+//dibuja las imagenes en pantalla en un collage con los 16 primeros
+//luego vas seleccionando al azar 16 numeros de la seleccion anterior y mostrando una por una las imagenes
+//lo anterior se logra mejor "desordenando" el array anterior, en cuyo caso se deberia copiar para saber si esta entre los 16 primeros o no
+//indicas ademas si la imagen esta entre los 16 primeros (si estaba) o los 16 segundos (no estaba) -> botones no y si
+//cada vez que se acierta se sube un punto
+//pones el numero de aciertos y pocertanje
+
+
+<link href='https://fonts.googleapis.com/css?family=Sarpanch:400,900' rel='stylesheet' type='text/css'>
+
+para cambiar las imagenes puedes usar este link, ver no el fade sino mas abajo el zoom in and out o la otra rotatoria
+aun asi preferiria algun otro tipo de animacion
+http://css3.bradshawenterprises.com/cfimg/
+		
+
+//this is a memory game
+//select a level
+//easy (objects)
+//medium (faces)
+//hard (landscapes)
+//impossible (patterns)
+//go!
+
+//loading images (3 seconds)
+
+//try to memorize each image shown here
+//collage
+//counter from 10 to 0
+
+//ok here we go (3 seconds)
+
+//did you see this image in the previous set?
+//no
+//yes
+
+//your results
+//you scored 12 out of 16
+//promedy: 68%
+//time: 0.37 or 1.01 min or 2.24 etc (more than 3 minutes -> stop the clock right there)
+//continue
+
+
+FACES:
+	Michael jackson
+	Martin Luther King
+	Woody Allen
+	Olivia Newton Jone
+	Pele
+	Dali
+	Oscar Wilde
+	Jim Morrison
+	Celine Dion
+	Gandhi
+	Kasparov
+	Lady Diana
+	Leonardo Di Crapio
+	Eddy Murphy
+	Jack Nicholson
+	Einstein
+	Reegan
+	Gabriel Garcia Marquez
+	Charlie Parker
+	Madonna
+	Sofia Loren
+	Cantinflas
+	Oprah
+	Mr Bean
+	Michael Jordan
+	arnold
+	Dictador de uganda
+	Bill gates
+	Stephen King
+	Hawsking
+	Sigmun Freud
+	Frida Kahlo
+
+
+
+LANDSCAPE
+	beach
+	country
+	lake
+	river
+	mountains
+	sky
+	ocean
+	valley with flowers
+	castle
+	sabana
+	city
+	town
+	people
+	docks
+	forrest
+	acantilado
+	artic
+	road
+	desert
+	sunset
+	amanecer
+	villa
+	farm
+	bridge
+	stonenge
+	cueva
+	aurora boreal
+	lluvia
+	parque 
+	marina
+	universo
+	cascada
+
+
+
+otro juego: te muestro una secuencia de entre 2 y 10 numeros
+luego te digo que me escribas en orden los numeros que viste sumados por un numero entre 3 y 9 tambien
+asi que si te puse por ejemplo 4,8,2 y hay que sumarle 6, tienes que escribir 10, 14, 8
+para mayor look puedes usar cartas del 2 al 9 o algo asi?
+ 
+otro mas:
+esta vez te enseno alguna imagen de algo completamente identificable: un carro, un perro, un gato, una pelota, un martillo, etc
+luego te pregunto que pongas en orden lo que viste usando su primera letra c,p,g,p,m,etc
+es bastante parecido al anterior
+ 
+me gustaria poner otros niveles bien dificilotes como cartas y colores
+o sea, tenemos:
+1-easy=> objetos, animales, plantas, etc (arregla esto, cambia algunas imagenes por cosas buenas pipo, eh?)
+2-medium=> personas famosas
+3-hard=> paisajes
+4-extreme=> cartas
+5-insane=> colores
+6-imposible=> patrones
+los colores:
+
+
+
+
+
+
+,,azul opaco,rojo rosaceo,,verde oscuro,slate gray,dark slate gray,
+floral white,amarillo palido,,azul muy ligero,cyan claro,rosadito bajo,rosybrown
+
+
+
+
+
+las cartas finalmente seran los cuatro ases, los cuatro reyes, las cuatro reinas y los cuatro principes
+y 4 de: 4,5,6,10
+ 
+asi que tenemos:
+                Image Detective
+                No tengo nombre pa este otro aun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+ 
+<div>
+ 
+  <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSgNXbI3gkXrl6HxHrOPxRsQpfTb9jgQCOB0f8aqdwsMSScw_4s"/>
+ 
+  <img src="http://3.bp.blogspot.com/-LrFHXaONx-Q/T-c608kEgZI/AAAAAAAJDic/rmXajBexsyI/s1600/pet+pictures+(1).gif" class="pic" />
+ 
+</div>
+ 
+<button>
+do it
+</button>
+ 
+ 
+div {
+    position: relative;
+  border: 1px solid black;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  }
+ 
+  button{
+    float: right;
+  }
+ 
+img{
+   
+    position: absolute;
+    top:0;
+   
+    width: 250px;
+    height: 250px;
+   
+    
+    
+    transition: .4s ease-in-out;
+   -moz-transition: .4s ease-in-out;
+   -webkit-transition: .4s ease-in-out;
+   
+}
+.doit{
+   transform:translate(0,183px) rotate(90deg);
+    -ms-transform:translate(0,183px) rotate(90deg);
+    -webkit-transform:translate(0,250px) rotate(90deg);
+    opacity: 0;
+}
+ 
+ 
+$( document ).ready(function() {
+   var but = $("button");
+   var pic = $("img.pic");
+   but.on("click", function() {
+                var there = pic.hasClass("doit");
+    pic.toggleClass("doit", !there);
+   });
+});
+ 
+ 
+http://jsfiddle.net/62RJc/491/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Image Detective</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width">
+		<link href='style.css' rel='stylesheet' type='text/css'>
+		<script language='javascript' type="text/javascript" src='jquery-2.2.0.min.js'></script>
+		<script language='javascript' type="text/javascript" src='script.js'></script>
+	</head>
+	<body>
+
+		<div class="container">
+
+			<div class="header"><img src="assets/logo.png"></div>
+
+			<!-- ******************** first tab ******************** -->
+
+			<div class="tab">
+
+				<table>
+					<tr>
+						<td>
+
+							<h1>SELECT A LEVEL</h1>
+
+							<div class="level checked">Easy</div>
+							<div class="level disabled">Medium</div>
+							<div class="level disabled">Hard</div>
+							<div class="level disabled">Extreme</div>
+							<div class="level disabled">Insane</div>
+							<div class="level disabled">Impossible</div>
+
+						</td>
+					</tr>
+				</table>
+
+				<div class="button-group">
+					<span class="button primary">START</span>
+				</div>
+				
+			</div>
+
+			<!-- ******************** second tab ******************** -->
+
+			<div class="tab hidden">
+
+				<table>
+					<tr>
+						<td>
+							
+							<h2 id="text-label">LOADING IMAGES<!-- OK HERE WE GO! --></h2>
+
+							<div class="spinner">
+								<div class="rect1"></div>
+								<div class="rect2"></div>
+								<div class="rect3"></div>
+								<div class="rect4"></div>
+								<div class="rect5"></div>
+							</div>
+
+						</td>
+					</tr>
+				</table>
+
+			</div>
+
+			<!-- ******************** third tab ******************** -->
+
+			<div class="tab hidden">
+
+				<h3>Try to memorize each image shown here<br><span class="counter">10</span><br><br></h3>
+
+				<div id="thumbs">
+					<div class="thumb"><img src="assets/easy/1.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/2.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/3.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/4.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/5.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/6.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/7.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/8.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/9.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/10.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/11.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/12.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/13.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/14.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/15.jpg"></div>
+	                <div class="thumb"><img src="assets/easy/16.jpg"></div>
+				</div>
+
+				<div class="clearer"></div>
+
+			</div>
+
+			<!-- ******************** fourth tab ******************** -->
+
+			<div class="tab hidden">
+
+				<h3>Did you see this image in the previous set?<br><span class="counter">20</span></h3>
+
+				<table>
+					<tr>
+						<td>
+
+							<div class="pics">
+
+								<img class="pic" src="assets/medium/1.jpg">
+								<img class="pic" src="assets/medium/2.jpg">
+								<img class="pic" src="assets/medium/3.jpg">
+								<img class="pic" src="assets/medium/4.jpg">
+								<img class="pic" src="assets/medium/5.jpg">
+								<img class="pic" src="assets/medium/6.jpg">
+								<img class="pic" src="assets/medium/7.jpg">
+								<img class="pic" src="assets/medium/8.jpg">
+								<img class="pic" src="assets/medium/9.jpg">
+								<img class="pic" src="assets/medium/10.jpg">
+								<img class="pic" src="assets/medium/11.jpg">
+								<img class="pic" src="assets/medium/12.jpg">
+								<img class="pic" src="assets/medium/13.jpg">
+								<img class="pic" src="assets/medium/14.jpg">
+								<img class="pic" src="assets/medium/15.jpg">
+								<img class="pic" src="assets/medium/16.jpg">
+
+							</div>
+
+						</td>
+					</tr>
+				</table>
+
+				<div class="button-group">
+					<span class="button primary">NUP</span><span class="button secondary">YES</span>
+				</div>
+
+			</div>
+
+			<!-- ******************** fith tab ******************** -->
+
+			<div class="tab hidden">
+
+				<table>
+					<tr>
+						<td>
+							
+							<h1>YOUR RESULTS</h1>
+
+							<h2>
+								You scored 
+								<span class="remark text-secondary" id="score">12</span> 
+								out of 
+								<span class="remark text-primary" id="total">16</span>
+								<br>
+								<span class="remark">Promedy:</span> <span id="promedy">75%</span>
+								<br><br>
+							</h2>
+
+							<div class="clearer"></div>
+
+							<h3 class="remark" id="outcome">
+								<!-- NEXT LEVEL UNLOCKED! -->
+								YOU NEED TO SCORE<br>75% OR HIGHER<br>TO UNLOCK<br>THE NEXT LEVEL
+							</h3>
+
+							<div class="clearer"></div>
+
+						</td>
+					</tr>
+				</table>
+
+				<div class="button-group">
+					<span class="button primary">BACK</span>
+				</div>
+
+			</div>
+			
+			<div class="footer"><a href="http://www.allcrossword.com" target="_blank">© All Crossword 2016</a></div>
+
+		</div>
+		
+	</body>
+</html>
