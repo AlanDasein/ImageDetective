@@ -127,15 +127,13 @@ a:hover {
 .pics {
 	position: relative;
 	width: 250px;
-	height: 250px;
+	height: 328px;
 	overflow: hidden;
 }
 
 .pic {
 	position: absolute;
     top:0;
-    width: 250px;
-    height: 250px;
     transition: .4s ease-in-out;
 	-moz-transition: .4s ease-in-out;
 	-webkit-transition: .4s ease-in-out;

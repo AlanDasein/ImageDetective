@@ -7,7 +7,7 @@ $(document).ready(function() {
 		TIME_TO: {
 			SWITCH_TABS: 250,
 			DISPLAY_COLLAGE: 10,
-			COMPLETE_TASK: 20,
+			COMPLETE_TASK: 30,
 			PAUSE: 2500
 		}
 	};
@@ -38,10 +38,8 @@ $(document).ready(function() {
 			return o;
 		},
 		get_images: function() {
-			VARS.pics1 = [];
-			for(var i = 0;i < CONSTANTS.TOTAL_IMAGES;i++) VARS.pics1[i] = (i + 1);
 			FUNCTIONS.shuffle(VARS.pics1);
-			VARS.pics2 = VARS.pics1;
+			VARS.pics2 = VARS.pics1.slice(0);
 			FUNCTIONS.shuffle(VARS.pics2);
 		},
 		switch_tabs: function(i,j) {
@@ -79,6 +77,8 @@ $(document).ready(function() {
 			$("<div/>", {"class": ("level " + (i === 0 ? "checked" : "disabled")), "html": CONSTANTS.LEVELS[i]}).appendTo(container);
 		}
 		DOM.levels = container.find("div.level");
+		VARS.pics1 = [];
+		for(var i = 0;i < CONSTANTS.TOTAL_IMAGES;i++) VARS.pics1[i] = (i + 1);
 		FUNCTIONS.get_images();
 	})(); //init app end
 
