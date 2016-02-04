@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Image Detective</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width">
+		<link href='style.css' rel='stylesheet' type='text/css'>
+		<script language='javascript' type="text/javascript" src='jquery-2.2.0.min.js'></script>
+		<script language='javascript' type="text/javascript" src='script.js'></script>
+	</head>
+	<body>
+
+		<div class="container">
+
+			<div class="header"><img src="assets/logo.png"></div>
+
+			<!-- ******************** first tab ******************** -->
+
+			<div class="tab">
+
+				<table>
+					<tr>
+						<td>
+
+							<h1>SELECT A LEVEL</h1>
+
+							<div id="level-group"></div>
+							
+						</td>
+					</tr>
+				</table>
+
+				<div class="button-group">
+					<span class="button primary">START</span>
+				</div>
+				
+			</div>
+
+			<!-- ******************** second tab ******************** -->
+
+			<div class="tab hidden">
+
+				<table>
+					<tr>
+						<td>
+							
+							<h2 id="text-label"></h2>
+
+							<div class="spinner">
+								<div class="rect1"></div>
+								<div class="rect2"></div>
+								<div class="rect3"></div>
+								<div class="rect4"></div>
+								<div class="rect5"></div>
+							</div>
+
+						</td>
+					</tr>
+				</table>
+
+			</div>
+
+			<!-- ******************** third tab ******************** -->
+
+			<div class="tab hidden">
+
+				<h3>Try to memorize each image shown here<br><span class="counter"></span><br><br></h3>
+
+				<div id="thumbs"></div>
+
+				<div class="clearer"></div>
+
+			</div>
+
+			<!-- ******************** fourth tab ******************** -->
+
+			<div class="tab hidden">
+
+				<h3>Did you see this image in the previous set?<br><span class="counter"></span></h3>
+
+				<table>
+					<tr>
+						<td>
+
+							<div class="pics"></div>
+
+						</td>
+					</tr>
+				</table>
+
+				<div class="button-group">
+					<span class="button primary">NUP</span><span class="button secondary">YES</span>
+				</div>
+
+			</div>
+
+			<!-- ******************** fith tab ******************** -->
+
+			<div class="tab hidden">
+
+				<table>
+					<tr>
+						<td>
+							
+							<h1>YOUR RESULTS</h1>
+
+							<h2>
+								You scored 
+								<span class="remark text-secondary" id="score"></span> 
+								out of 
+								<span class="remark text-primary" id="total"></span>
+								<br>
+								<span class="remark">Promedy:</span> <span id="promedy"></span>%
+								<br><br>
+							</h2>
+
+							<div class="clearer"></div>
+
+							<h3 class="remark" id="outcome"></h3>
+
+							<div class="clearer"></div>
+
+						</td>
+					</tr>
+				</table>
+
+				<div class="button-group">
+					<span class="button primary">BACK</span>
+				</div>
+
+			</div>
+			
+			<div class="footer"><a href="http://www.allcrossword.com" target="_blank">© All Crossword 2016</a></div>
+
+		</div>
+		
+	</body>
+</html>
