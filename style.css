@@ -34,11 +34,6 @@ h3 {
 	font-size: 16px;
 }
 
-h3 > span {
-	font: bold 30px "Georgia";
-	color: #F92922;
-}
-
 a {
 	font-size: 12px;
 	font-style: italic;
@@ -101,14 +96,14 @@ a:hover {
 	margin-top: 20px;
 	padding-top: 20px;
 	border-top: 2px solid #000;
+	text-align: center;
 }
 
 .button {
-	display: block;
+	display: inline-block;
 	width: 60px;
-	margin: auto;
+	margin-left: 3px;
 	padding: 10px 20px 10px 20px;
-	text-align: center;
 	font-size: 14px;
 	color: #FFF;
 	cursor: pointer;
@@ -118,9 +113,38 @@ a:hover {
 	opacity: .8;
 }
 
+.counter {
+	font: bold 30px "Georgia";
+	color: #F92922;
+}
+
 .thumb {
 	float: left;
 	width: 25%;
+}
+
+.pics {
+	position: relative;
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+}
+
+.pic {
+	position: absolute;
+    top:0;
+    width: 250px;
+    height: 250px;
+    transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-webkit-transition: .4s ease-in-out;
+}
+
+.pic.dismiss {
+	transform:translate(0,250px) rotate(90deg);
+	-ms-transform:translate(0,250px) rotate(90deg);
+	-webkit-transform:translate(0,250px) rotate(90deg);
+	opacity: 0;
 }
 
 /* ---------- common classes ---------- */
