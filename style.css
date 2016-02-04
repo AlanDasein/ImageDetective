@@ -157,6 +157,14 @@ a:hover {
 	background: #00BB00;
 }
 
+.text-primary {
+	color: #F92922;
+}
+
+.text-secondary {
+	color: #00BB00;
+}
+
 .hidden {
 	display: none;
 	opacity: 0;
@@ -165,6 +173,10 @@ a:hover {
 .clearer {
 	height: 50px;
 	clear: both;
+}
+
+.remark {
+	font-weight: bold;
 }
 
 /* ---------- spinner ---------- */
